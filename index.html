@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logical Towers | Educational Game Design</title>
+  <meta
+    name="description"
+    content="Logical Towers is an educational deduction card game for grades 9-12 that teaches formal logic, categorization, and argumentation through tower building, guessing, and challenge mechanics."
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-layout">
+      <a class="brand" href="#top">
+        <strong>Logical Towers</strong>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#audience">Audience</a>
+        <a href="#mechanics">Mechanics</a>
+        <a href="#theories">Theories</a>
+        <a href="#playtesting">Playtesting</a>
+        <a href="#media">Media</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero reveal">
+      <div class="wrap">
+        <p class="eyebrow">Educational deduction card game for grades 9-12</p>
+        <h1>Logical Towers</h1>
+        <p class="intro-text">
+          Logical Towers is a classroom game where each player receives a hidden object and builds a
+          five-level tower of attributes that must stay logically true. The challenge is to make the
+          tower specific enough to prove the object, but not so obvious that other players guess it first.
+        </p>
+        <div class="summary-strip" aria-label="Game summary">
+          <div>
+            <span class="summary-label">Genre</span>
+            <strong>Educational / Deduction / Strategy</strong>
+          </div>
+          <div>
+            <span class="summary-label">Players</span>
+            <strong>3-6</strong>
+          </div>
+          <div>
+            <span class="summary-label">Play Time</span>
+            <strong>15-20 minutes</strong>
+          </div>
+          <div>
+            <span class="summary-label">Core Idea</span>
+            <strong>Build, defend, and infer logical descriptions</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band reveal" id="audience">
+      <div class="wrap section-layout">
+        <div class="section-header">
+          <h2>Learning Goals and Intended Audience</h2>
+        </div>
+        <div class="section-body">
+          <div class="text-columns">
+            <div>
+              <h3>Intended Audience</h3>
+              <p>
+                Logical Towers is designed for <strong>high school students in grades 9-12</strong>.
+                It works well in computer science, math, ELA, gifted education, or interdisciplinary
+                problem-solving classrooms because students interact with logic through concrete nouns and visible clues.
+              </p>
+              <p>
+                The game supports students who benefit from discussion, structured reasoning, and low-pressure
+                opportunities to revise their thinking. Because the attributes come from a shared deck, the game
+                reduces the ambiguity of fully open-ended responses.
+              </p>
+            </div>
+            <div>
+              <h3>Learning Goals</h3>
+              <ul class="clean-list">
+                <li>Practice logical reasoning with <code>AND</code>, <code>OR</code>, and <code>NOT</code>.</li>
+                <li>Use constraint satisfaction to keep every clue true for one hidden object.</li>
+                <li>Strengthen categorization by sorting objects through material, shape, function, and use.</li>
+                <li>Apply deductive reasoning to infer other players' hidden objects.</li>
+                <li>Develop argumentation skills by defending claims and challenging weak evidence.</li>
+                <li>Build metacognitive habits by revising flawed towers instead of treating mistakes as final.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band alternate reveal" id="mechanics">
+      <div class="wrap section-layout">
+        <div class="section-header">
+          <h2>Game Concept and Mechanics</h2>
+        </div>
+        <div class="section-body">
+          <div class="content-row">
+            <div class="content-label">
+              <h3>Game Concept</h3>
+            </div>
+            <div class="content-copy">
+              <p>
+                Each player receives one hidden noun card. During the game, players build a public
+                tower made of five attributes that describe their object. The tower acts as a formal
+                logical expression, such as <code>wooden AND container AND cylindrical AND NOT modern</code>.
+              </p>
+              <p>
+                Other players watch that tower grow, look for contradictions, decide whether to
+                challenge a clue, and choose the right moment to guess the object. The theme is simple:
+                players are constructing knowledge one level at a time, and every level must hold up.
+              </p>
+            </div>
+          </div>
+
+          <div class="content-row">
+            <div class="content-label">
+              <h3>Core Mechanics</h3>
+            </div>
+            <div class="content-copy">
+              <ul class="clean-list">
+                <li>Players draw one attribute card each turn from the deck or the discard pile.</li>
+                <li>On a turn, a player may build, modify the top of the tower, discard, or guess another player's object.</li>
+                <li>The tower must reach exactly five levels.</li>
+                <li><code>AND</code> is the default connector and adds a new constraint.</li>
+                <li><code>OR</code> can be used only once and only with the most recent attribute.</li>
+                <li><code>NOT</code> can be used only twice, and each negated claim must still be accurate.</li>
+                <li>At least three of the five levels must be positive attributes.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="content-row">
+            <div class="content-label">
+              <h3>Interaction, Rules, and Feedback</h3>
+            </div>
+            <div class="content-copy">
+              <p>
+                Players interact with the game by building public evidence, interpreting other players'
+                towers, challenging false claims, and making guesses. Challenges and guesses create immediate
+                feedback: a correct guess disqualifies the target, a failed guess costs the player a turn, and
+                a correct challenge disqualifies a player whose logic is false.
+              </p>
+              <p>
+                Progression comes from narrowing the set of possible objects over time. A player wins by completing
+                a valid five-level tower, revealing the hidden object, and passing group validation.
+              </p>
+            </div>
+          </div>
+
+          <div class="content-row">
+            <div class="content-label">
+              <h3>Digital Version Plan</h3>
+            </div>
+            <div class="content-copy">
+              <p>
+                The paper prototype can be developed into a digital version by automating setup, tracking modifier limits,
+                validating logical consistency, and storing a larger set of noun and attribute cards. A digital version can
+                also provide instant rule feedback and teacher-facing analytics about common mistakes or guessing patterns.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band alternate reveal" id="theories">
+      <div class="wrap section-layout">
+        <div class="section-header">
+          <h2>Learning Theories and Perspectives</h2>
+        </div>
+        <div class="section-body">
+          <div class="theory-table">
+            <div class="theory-row">
+              <div class="theory-name"><h3>Constructivism</h3></div>
+              <div class="theory-copy">
+                <p>Students build understanding by actively creating a logical model instead of memorizing terms in isolation.</p>
+                <p><strong>Game example:</strong> Each player constructs and revises a five-level expression for a hidden object.</p>
+              </div>
+            </div>
+            <div class="theory-row">
+              <div class="theory-name"><h3>Behaviorism</h3></div>
+              <div class="theory-copy">
+                <p>The game uses immediate consequences to reinforce accurate reasoning and discourage careless play.</p>
+                <p><strong>Game example:</strong> Failed guesses cost a turn, and successful challenges remove invalid reasoning from play.</p>
+              </div>
+            </div>
+            <div class="theory-row">
+              <div class="theory-name"><h3>Situated Learning</h3></div>
+              <div class="theory-copy">
+                <p>Students use logic inside a meaningful activity where formal reasoning has a clear purpose.</p>
+                <p><strong>Game example:</strong> Players use operators and attributes to protect their object and interpret public evidence.</p>
+              </div>
+            </div>
+            <div class="theory-row">
+              <div class="theory-name"><h3>Social Learning</h3></div>
+              <div class="theory-copy">
+                <p>Students learn through observing peers, comparing strategies, and discussing whether claims are justified.</p>
+                <p><strong>Game example:</strong> Guessing and challenge mechanics keep all players engaged with each other's reasoning.</p>
+              </div>
+            </div>
+            <div class="theory-row">
+              <div class="theory-name"><h3>Metacognition</h3></div>
+              <div class="theory-copy">
+                <p>Strong play requires students to monitor whether a tower is both true and strategically useful.</p>
+                <p><strong>Game example:</strong> The modify action encourages players to inspect and repair weak logic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band reveal" id="playtesting">
+      <div class="wrap section-layout">
+        <div class="section-header">
+          <h2>Findings from Playtesting</h2>
+        </div>
+        <div class="section-body">
+          <div class="date-block">
+            <h3>In-Class Playtesting on April 13th, 2026</h3>
+
+            <div class="playtest-block">
+              <h4>Session Overview</h4>
+              <p>
+                This round of playtesting took place during Educational Game Design on April 13th, 2026.
+                The session materials were prepared by Aparna Manoj, Ashlyn McClendon, Celeste Mason,
+                and David Peeler. A paper prototype was used in class with two playsets of noun cards,
+                a shared attribute deck grouped by category, logical operators, and a one-page rule sheet.
+              </p>
+              <p>
+                The class prototype used noun cards such as <strong>Bicycle</strong>, <strong>Book</strong>,
+                <strong>Laptop</strong>, and <strong>Scissors</strong>, along with attribute cards such as
+                <code>metal</code>, <code>portable</code>, <code>electronic</code>, <code>foldable</code>,
+                <code>paper</code>, and <code>has moving parts</code>.
+              </p>
+            </div>
+
+            <div class="playtest-block">
+              <h4>Procedure</h4>
+              <p>
+                Playtesting consisted of two sessions with four participants in each group. Players were
+                given minimal instructions, read the rule sheet, and then began playing a round. During
+                play, they drew cards, built towers, discussed possible strategies, and occasionally paused
+                to ask clarifying questions. After the round, participants answered follow-up questions and
+                completed a short questionnaire on their laptops or phones using team-assigned participant codes.
+              </p>
+            </div>
+
+            <div class="playtest-block">
+              <h4>Observations and Feedback</h4>
+              <p>
+                General gameplay moved smoothly, and most groups transitioned between turns without much trouble.
+                The most common pauses happened when players were deciding how to use attributes or when they were
+                unsure about the exact use of <code>OR</code> and <code>NOT</code>. In one case, a player tried
+                turning an attribute card upside down to show that it meant <code>NOT</code>, which suggested that
+                the negation mechanic still needs clearer representation.
+              </p>
+              <p>
+                Players were actively talking through strategy, challenging one another, and laughing as the round
+                progressed. One player said, "This is fun." Another player talked through confusion about stacking,
+                grouping, and order of operations, which confirmed that the core idea was engaging but some parts of
+                the rule system were still unclear during live play.
+              </p>
+            </div>
+
+            <div class="playtest-block">
+              <h4>Survey Results and Main Concerns</h4>
+              <ul class="clean-list">
+                <li><strong>Most players rated enjoyment at 3 or 4 out of 5.</strong></li>
+                <li><strong>Playability was rated very highly, with all players giving it 5 out of 5.</strong></li>
+                <li><strong>Reported learning gains ranged from 1 to 3 out of 5, although one participant noted that the target age group would likely benefit more strongly.</strong></li>
+                <li><strong>The biggest concerns were rule clarity, sequencing of actions, balancing, and a possible "Player 1 Advantage."</strong></li>
+                <li><strong>Players suggested adding a shared word bank to narrow the set of possible objects and make deductions easier to interpret.</strong></li>
+                <li><strong>One player felt that immediate disqualification after a successful challenge was too severe and suggested rebuilding instead.</strong></li>
+                <li><strong>Another player recommended adding an example tower to the instructions that shows how each operator works.</strong></li>
+                <li><strong>A further suggestion was to experiment with a hot/cold style hint system for guesses.</strong></li>
+              </ul>
+            </div>
+
+            <div class="playtest-block">
+              <h4>Interpretation</h4>
+              <p>
+                The responses suggest that the game concept is strong and socially engaging, but the rules need
+                refinement so that operator use, grouping, and challenge timing are more intuitive. Written survey
+                responses were generally positive about engagement, while more neutral on learning and challenge,
+                which makes sense because the participants were not the exact target audience. The team also noted
+                that the classroom setting and the fact that many participants already knew each other may have
+                influenced the results.
+              </p>
+            </div>
+
+            <div class="playtest-block">
+              <h4>Next Steps</h4>
+              <p>
+                Based on this session, the next iteration should focus on clearer instructions, stronger examples,
+                attribute balance, difficulty scaling, and revisions to the guessing and challenge systems. The team
+                also plans to keep refining the mostly linear tower structure because it is easier for players to read
+                and simpler to imagine implementing in Unity than the earlier non-linear prototype.
+              </p>
+              <ul class="clean-list">
+                <li>Refine attribute balance.</li>
+                <li>Improve difficulty scaling.</li>
+                <li>Rewrite game instructions for better clarity.</li>
+                <li>Build an electronic version of the game.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="date-block">
+            <h3>Playtesting on April 27th, 2026</h3>
+            <p class="group-note">To be played.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band alternate reveal" id="media">
+      <div class="wrap section-layout">
+        <div class="section-header">
+          <p class="eyebrow">Media</p>
+          <h2>Media</h2>
+          <p>
+            This section collects supporting visuals from the project, including classroom documentation
+            from playtesting sessions.
+          </p>
+        </div>
+        <div class="section-body">
+          <div class="date-block">
+            <h3>Gallery</h3>
+            <div class="playtest-block">
+              <h4>Group Playtesting on 4/20/2026</h4>
+              <div class="media-item">
+                <video class="gallery-video" controls preload="metadata" playsinline>
+                  <source src="media/group_playtesting_video_4_20_2026.mp4" type="video/mp4">
+                  Your browser does not support embedded video.
+                </video>
+                <p class="media-caption">
+                  Classroom playtesting video recorded on April 20th, 2026.
+                  <a href="media/group_playtesting_video_4_20_2026.mp4">Open the video directly</a>
+                  if it does not play in your browser.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
