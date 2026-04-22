@@ -122,20 +122,47 @@
           <h2>Game Concept and Mechanics</h2>
         </div>
         <div class="section-body">
+          
+
           <div class="content-row">
             <div class="content-label">
-              <h3>Game Concept</h3>
+              <h3>Concept</h3>
             </div>
             <div class="content-copy">
               <p>
-                Each player receives one hidden noun card. During the game, players build a public
-                tower made of five attributes that describe their object. The tower acts as a formal
-                logical expression, such as <code>wooden AND container AND cylindrical AND NOT modern</code>.
+                Logical Towers is a multiplayer deduction card game where players construct logical “towers” to describe a hidden object. 
+                The goal is to balance precision and ambiguity—revealing enough to validate correctness while avoiding early identification.
+              </p>
+            </div>
+          </div>
+          
+          <div class="content-row">
+            <div class="content-label">
+              <h3>Gameplay</h3>
+            </div>
+            <div class="content-copy">
+              <p>
+                Each player is assigned a hidden noun card and aims to construct a public logical description of their 
+                object using attribute cards. Players begin with four attributes, with the remaining cards forming a 
+                draw and discard pile. On each turn, a player draws one card and may choose one action out of building 
+                their tower, demolishing it, replacing attribute cards, or guessing another player’s object. 
+                Any number of cards from their hand can be replaced in a round, allowing for strategic 
+                resource management.
               </p>
               <p>
-                Other players watch that tower grow, look for contradictions, decide whether to
-                challenge a clue, and choose the right moment to guess the object. The theme is simple:
-                players are constructing knowledge one level at a time, and every level must hold up.
+                Players build a five-level logical tower, where each level consists of either a single attribute 
+                or two attributes connected with an OR. Levels are connected using AND, resulting in net four AND 
+                connections across the tower. Players may use up to one OR and two NOT operators per tower, 
+                though their use is optional. OR allows players to introduce ambiguity while maintaining correctness, 
+                and NOT enables exclusion of properties. The final tower must be logically consistent and accurately 
+                describe the hidden object. Sample: Barrel can be described by 
+                <code>wooden AND container AND ( heavy OR flat ) AND cylindrical AND NOT modern</code>.
+              </p>
+              </p>
+                Players can dismantle their towers by removing levels one per round in a top-down, 
+              stack-like manner, supporting iterative refinement. At any point, a player may guess another 
+              player’s object; correct guesses eliminate the opponent, while incorrect guesses incur a penalty. 
+              The first player to complete a valid five-level tower and verify it against their object wins the game.
               </p>
             </div>
           </div>
@@ -146,13 +173,41 @@
             </div>
             <div class="content-copy">
               <ul class="clean-list">
-                <li>Players draw one attribute card each turn from the deck or the discard pile.</li>
-                <li>On a turn, a player may build, modify the top of the tower, discard, or guess another player's object.</li>
-                <li>The tower must reach exactly five levels.</li>
-                <li><code>AND</code> is the default connector and adds a new constraint.</li>
-                <li><code>OR</code> can be used only once and only with the most recent attribute.</li>
-                <li><code>NOT</code> can be used only twice, and each negated claim must still be accurate.</li>
-                <li>At least three of the five levels must be positive attributes.</li>
+                <li>
+                  <strong>Preparation:</strong>
+                  Players are assigned hidden noun cards and dealt attribute cards from a shuffled deck, 
+                  introducing randomness and initial conditions.
+                </li>
+                <li>
+                  <strong>Hidden Information System:</strong>
+                  Each player is assigned a secret noun card, 
+                  creating asymmetric information and driving deduction-based gameplay.
+                </li>
+                <li>
+                  <strong>Resource Management:</strong>
+                  Players manage a limited hand of attribute cards drawn from a shared deck, 
+                  making decisions about when to keep, discard, or replace cards.
+                </li>
+                <li>
+                  <strong>Turn-Based Actions:</strong>
+                  On each turn, players draw a card and choose to build their tower, 
+                  dismantle it, discard cards, or attempt to guess another player’s object.
+                </li>
+                <li>
+                  <strong>Logical Construction:</strong>
+                  Players construct a five-level tower using attributes connected primarily by <code>AND</code>, 
+                  with optional use of one <code>OR</code> (within the same category) and up to two <code>NOT</code> operators.
+                </li>
+                <li>
+                  <strong>Rule Constraints:</strong>
+                  Towers must remain logically consistent, with no contradictions, 
+                  and must accurately describe the player’s hidden object upon completion.
+                </li>
+                <li>
+                  <strong>Validation:</strong>
+                  Players may guess opponents’ objects at any time; 
+                  correct guesses eliminate the opponent, while incorrect guesses result in a penalty.
+                </li>
               </ul>
             </div>
           </div>
@@ -184,6 +239,9 @@
                 The paper prototype can be developed into a digital version by automating setup, tracking modifier limits,
                 validating logical consistency, and storing a larger set of noun and attribute cards. A digital version can
                 also provide instant rule feedback and teacher-facing analytics about common mistakes or guessing patterns.
+                An initial interface concept to illustrate how this digital version might look and function was created. 
+                It can be viewed in our Figma prototype here:
+                <a href="https://www.figma.com/design/vF0HyB4znZczxVSpR8kylA/Logic-Towers?node-id=0-1&t=zqQc4pns3ZpYt1UK-0" target="_blank">Figma Design Prototype</a>.
               </p>
             </div>
           </div>
@@ -210,6 +268,13 @@
               <div class="theory-copy">
                 <p>The game uses immediate consequences to reinforce accurate reasoning and discourage careless play.</p>
                 <p><strong>Game example:</strong> Failed guesses cost a turn, and successful challenges remove invalid reasoning from play.</p>
+              </div>
+            </div>
+            <div class="theory-row">
+              <div class="theory-name"><h3>Cognitive Learning</h3></div>
+              <div class="theory-copy">
+                <p>Players actively construct and refine internal mental models of logical relationships through gameplay, integrating new information with prior understanding. </p>
+                <p><strong>Game example:</strong> Cognitive processes such as attention, memory, and deductive reasoning are required from players to interpret, evaluate, and reorganize information.</p>
               </div>
             </div>
             <div class="theory-row">
